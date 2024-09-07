@@ -6,14 +6,19 @@ on:
 jobs:
   linter:
     runs-on: ubuntu-latest
+    container: 
+      image: python:3.10-slim-buster
+    services:
+      azurite: 
+        image: mcr.microsoft.com/azure-storage/azurite
     steps:
       - name: get code
         uses: actions/checkout@v4
-      - name: set up python 3.10
-        uses: actions/setup-python@v3
-        with:
-          python-version: '3.10'
+      # - name: set up python 3.10
+      #   uses: actions/setup-python@v3
+      #   with:
+      #     python-version: '3.10'
       - name: install required modules
-        run: pip install pytest azure-storage-blob
+        run: pip install pytest azure-storage-blob python-dotenv
       - name: run test
         run: pytest
