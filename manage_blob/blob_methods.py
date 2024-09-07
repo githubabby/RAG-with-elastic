@@ -1,7 +1,11 @@
 # import modules
+import os
+
 from azure.core.exceptions import ResourceExistsError
 from azure.storage.blob import BlobServiceClient
 
+# might change the path of utils later
+from utils import path_exists_isfile
 
 # create get_blob_service_client function
 def create_blob_service_client():
