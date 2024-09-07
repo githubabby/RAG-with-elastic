@@ -1,0 +1,15 @@
+name: linter and tester
+
+on: push
+
+jobs:
+  linter:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Sample linter
+        run: echo "running linter"
+  test:
+    runs-on: ubunutu-latest
+    steps:
+      - name: Sample test
+        run: echo "running test"
