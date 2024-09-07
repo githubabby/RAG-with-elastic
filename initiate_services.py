@@ -17,6 +17,7 @@ from manage_elastic import (
 from manage_embedding import get_embeddings_function
 from utils.utils import list_files
 
+print("service initiation")
 # define constants
 container_name = "sample-documents"
 upload_documents_path = "sample-documents"
@@ -37,3 +38,4 @@ create_index()
 es_vectorstore.add_documents(documents=documents)
 result = get_similar_documents(Query=query, VectorStore=es_vectorstore)
 print(result)
+print("service initiation complete!!")
