@@ -44,3 +44,7 @@ def upload_or_modify_blob(ContainerName, BlobPath, BlobName=None):
 def list_blob_in_container(ContainerName):
     container_client = get_or_create_container(ContainerName)
     return [name for name in container_client.list_blob_names()]
+
+def get_blob_data_from_container(ContainerName):
+    contianer_client = get_blob_data_from_container(ContainerName)
+    return {name:contianer_client.download_blob(name).readall() for name in contianer_client.list_blob_names()}
