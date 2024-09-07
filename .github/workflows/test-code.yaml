@@ -19,6 +19,6 @@ jobs:
       #   with:
       #     python-version: '3.10'
       - name: install required modules
-        run: pip install pytest azure-storage-blob python-dotenv
+        run: pip install -r requirements.txt
       - name: run test
         run: pytest
