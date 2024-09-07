@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "rag-with-elastic"
+version = "0.1.0"
+description = "This package has basic RAG with elastic search and blob-storage"
+authors = ["Abby"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+azure-storage-blob = "^12.22.0"
+langchain-elasticsearch = "^0.2.2"
+langchain-core = "^0.2.38"
+python-dotenv = "^1.0.1"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

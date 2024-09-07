@@ -3,6 +3,7 @@ import os
 
 from azure.core.exceptions import ResourceExistsError
 from azure.storage.blob import BlobServiceClient
+from langchain_core.documents import Document
 
 # might change the path of utils later
 from utils.utils import path_exists_isfile
@@ -46,5 +47,9 @@ def list_blob_in_container(ContainerName):
     return [name for name in container_client.list_blob_names()]
 
 def get_blob_data_from_container(ContainerName):
-    contianer_client = get_blob_data_from_container(ContainerName)
+    contianer_client = get_or_create_container(ContainerName)
     return {name:contianer_client.download_blob(name).readall() for name in contianer_client.list_blob_names()}
+
+def create_documents_from_container(ContainerName):
+    blob_data = get_blob_data_from_container(ContainerName)
+    return [Document(page_content=blob_data[data]) for data in blob_data]

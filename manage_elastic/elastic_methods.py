@@ -16,8 +16,8 @@ def get_elastic_vectorstore(Embeddings):
             es_url=os.getenv('ES_URL'),
             index_name=os.getenv('INDEX_NAME'),
             embedding=Embeddings,
-            es_user=os.getenv('ELASTIC_USER'),
-            es_password=os.getenv('ELASTIC_PASSWORD'),
+            # es_user=os.getenv('ELASTIC_USER'),
+            # es_password=os.getenv('ELASTIC_PASSWORD'),
         )
 
 # get_document_by_similarity_search function
