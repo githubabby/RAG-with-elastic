@@ -40,6 +40,10 @@ def upload_or_modify_blob(ContainerName, BlobPath, BlobName=None):
     else:
         ...
 
+# function to list containers
+def list_containers():
+    bs_client = create_blob_service_client()
+    return [container.name for container in bs_client.list_containers()]
 
 # create list_blob_in_container function
 def list_blob_in_container(ContainerName):
