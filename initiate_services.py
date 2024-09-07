@@ -1,12 +1,20 @@
+# load env variables
+from dotenv import load_dotenv
+load_dotenv()
+
 # import modules
-from manage_blob import get_or_create_container, upload_or_modify_blob, create_documents_from_container
-from manage_elastic import create_index, get_elastic_vectorstore, get_similar_documents
+from manage_blob import (
+    get_or_create_container, 
+    upload_or_modify_blob, 
+    create_documents_from_container
+    )
+from manage_elastic import (
+    create_index, 
+    get_elastic_vectorstore, 
+    get_similar_documents
+    )
 from manage_embedding import get_embeddings_function
 from utils.utils import list_files
-from dotenv import load_dotenv
-
-# load env variables
-load_dotenv()
 
 # define constants
 container_name = "sample-documents"

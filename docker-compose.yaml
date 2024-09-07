@@ -1,0 +1,17 @@
+services:
+  azurite:
+    image: mcr.microsoft.com/azure-storage/azurite
+    container_name: azurite
+    ports:
+      - 10000:10000 
+
+  elasticsearch:
+    image: elasticsearch:8.15.0
+    container_name: elasticsearch
+    ports:
+      - 9200:9200
+      - 9300:9300
+    environment:
+      - discovery.type=single-node
+      - xpack.security.enabled=false 
+      - xpack.security.http.ssl.enabled=false
