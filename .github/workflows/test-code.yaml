@@ -13,10 +13,10 @@ jobs:
         image: mcr.microsoft.com/azure-storage/azurite
       elasticsearch:
         image: elasticsearch:8.15.0
-        # env:
-        #   discovery.type=single-node
-        #   xpack.security.enabled=false 
-        #   xpack.security.http.ssl.enabled=false
+        env:
+          discovery.type: single-node
+          xpack.security.enabled: false 
+          xpack.security.http.ssl.enabled: false
     steps:
       - name: get code
         uses: actions/checkout@v4
