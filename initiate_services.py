@@ -1,4 +1,5 @@
 # load env variables
+import os
 from dotenv import load_dotenv
 load_dotenv()
 
@@ -20,6 +21,9 @@ from utils.utils import list_files
 container_name = "sample-documents"
 upload_documents_path = "sample-documents"
 query = "what are features of langchain?"
+
+# set base dir
+os.environ['BASE_DIR_PATH'] = os.path.dirname(os.path.realpath(__file__))
 
 # initialise services
 container_client = get_or_create_container(container_name)
