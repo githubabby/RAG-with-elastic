@@ -9,8 +9,6 @@ from manage_blob import list_containers
 # container present
 def test_sample_container_present():
     assert 'sample-documents' in list_containers()
-
-def test_second_url():
     
 # blobs present in container
 
