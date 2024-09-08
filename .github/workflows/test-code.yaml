@@ -20,10 +20,6 @@ jobs:
     steps:
       - name: get code
         uses: actions/checkout@v4
-      # - name: set up python 3.10
-      #   uses: actions/setup-python@v3
-      #   with:
-      #     python-version: '3.10'
       - name: install required modules
         run: pip install -r requirements.txt
       - name: initiate services
